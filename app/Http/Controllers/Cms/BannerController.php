@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Ramsey\Uuid\Uuid;
 
-class BannerControllers extends Controller
+class BannerController extends Controller
 {
     public function index(Request $request)
     {
