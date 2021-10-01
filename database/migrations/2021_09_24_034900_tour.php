@@ -24,7 +24,7 @@ class Tour extends Migration
         $table->double("price_child");
         $table->string("tour_facility");
         $table->text("operational_hour");
-        $table->text("tour_image_primary");    
+        $table->text("tour_image_primary");   
         $table->timestamps();
         $table->softDeletes();   
 

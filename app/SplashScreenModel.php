@@ -18,9 +18,12 @@ class SplashScreenModel extends Model
 
 //    Field yang bisa di isi
     protected $fillable = [
+        "splash_screen_id",
         "splash_screen_image",
         "splash_screen_desc",
     ];
+
+    public $incrementing=false;
 
 //  Field yang di sembunyikan
     protected $hidden = [

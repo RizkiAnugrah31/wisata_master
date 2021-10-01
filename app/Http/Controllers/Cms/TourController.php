@@ -6,13 +6,15 @@ use App\TourModel;
 use App\TourImageModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Ramsey\Uuid\Uuid;
 
 class TourController extends Controller
+
+
 {
     public function index(Request $request)
     {
-        // dd($request->all());
-//        Get all data Menu from database
+
         $data = TourModel::paginate($request->limit);
         return $data;
     }
@@ -26,14 +28,21 @@ class TourController extends Controller
 
     public function store(Request $request)
     {
-//        Get All data from request
+        //  dd($request->all());
+        //        Get All data from request
+        $uuid1 = Uuid::uuid1();
+        //   dd($data);
         $dataTour = $request->except("tour_image");
+        $dataTour["tour_id"] = $uuid1->toString();
 //        query create
         $createTour = TourModel::insert($dataTour);
 //        check if create success or not
-        if (!$createTour) {
-            return "false tour ";
-        } 
+             if ($createTour) {
+        return "success";
+        } else {
+                 return "false";
+        }
+        
 
         $dataTourImage= $request->tour_image;
 
@@ -42,7 +51,7 @@ class TourController extends Controller
     public function update(Request $request, $id)
     {
 //        Get All data from request
-        $data = $request->all();
+         $data = $request->all();
 //        query update
         $update = TourModel::where('tour_id',$id)->update($data);
 //        check if update success or not

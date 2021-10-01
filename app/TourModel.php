@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TourrModel extends Model
+class TourModel extends Model
 {
     //    Soft Delete
     use softDeletes;
@@ -18,6 +18,7 @@ class TourrModel extends Model
 
 //    Field yang bisa di isi
     protected $fillable = [
+        "tour_id",
         "tour_name",
         "tour_desc",
         "longtitude",
@@ -29,6 +30,8 @@ class TourrModel extends Model
         "operational_hour",
         "tour_image_primary",
     ];
+
+    public $incrementing=false;
 
 //  Field yang di sembunyikan
     protected $hidden = [
