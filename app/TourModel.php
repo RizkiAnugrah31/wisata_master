@@ -27,7 +27,7 @@ class TourModel extends Model
         "price_adult",
         "price_child",
         "tour_facility",
-        "operational_hour",
+        "operational_hour", 
         "tour_image_primary",
     ];
 

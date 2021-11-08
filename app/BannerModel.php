@@ -16,7 +16,7 @@ class BannerModel extends Model
 //    Nama Primary Key
     protected $primaryKey = "banner_id";
 
-//    Field yang bisa di isi
+//    Field yang bisa di isi            
     protected $fillable = [
         "banner_id",
         "tour_id"
