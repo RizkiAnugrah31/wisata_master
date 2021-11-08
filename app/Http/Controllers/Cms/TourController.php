@@ -59,6 +59,7 @@ class TourController extends Controller
             return "success";
         } else {
             return "false";
+        
         }
     }
     public function delete($id)
