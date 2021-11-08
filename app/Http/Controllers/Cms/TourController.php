@@ -17,6 +17,7 @@ class TourController extends Controller
 
         $data = TourModel::paginate($request->limit);
         return $data;
+   
     }
 
     public function detail($id){
