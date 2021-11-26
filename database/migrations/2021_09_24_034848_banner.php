@@ -14,10 +14,10 @@ class Banner extends Migration
     public function up()
     {
         Schema::create('banner', function(Blueprint $table){
-        $table->uuid("banner_id");
-        $table->uuid("tour_id");
-        $table->softDeletes();
-        $table->timestamps();
+         $table->uuid('banner_id');
+         $table->uuid('tour_id');
+         $table->softDeletes();
+         $table->timestamps();
         });
     }
 

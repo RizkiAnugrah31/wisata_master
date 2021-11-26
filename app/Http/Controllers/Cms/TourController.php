@@ -25,8 +25,6 @@ class TourController extends Controller
         return $data;
     }
 
-
-
     public function store(Request $request)
     {
         //  dd($request->all());
