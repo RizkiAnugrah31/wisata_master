@@ -11,7 +11,7 @@ class BannerController extends Controller
 {
     public function index(Request $request)
     {
-        $data = BannerModel::paginate($request->limit);
+        $data = BannerModel::with('to_tur')->paginate($request->limit);
         return $data;
     }
 
@@ -31,10 +31,19 @@ class BannerController extends Controller
         $create = BannerModel::insert($data);
 //        check if create success or not
         if ($create) {
-            return "success";
-        } else {
-            return "false";
-        }
+            return response()->json([
+            'data'=> $data,
+            'message' => 'valid', 
+            'succes' => true
+            
+            ]);
+
+    }else {
+    return response()->json([
+        'message' =>'invalid',
+        'succes'=> false
+    ]);
+    }
     }
     public function update(Request $request, $id)
     {

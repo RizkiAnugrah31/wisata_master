@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+
 class TourModel extends Model
 {
     //    Soft Delete
@@ -39,4 +40,10 @@ class TourModel extends Model
         'updated_at',
         'deleted_at'
     ];
+
+    public function many_banner()
+    {
+        return $this->hasMany(Banner::class,'tour_id');
+
+    }
 }
